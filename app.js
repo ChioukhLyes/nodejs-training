@@ -3,45 +3,34 @@
  */
 
 /**
- * Create simple object
-  * @type {{firstName: string, pseudo: string, sport: string}}
+ * @name orderNumber
+ * @param orderNumber
+ * @description program endpoint
  */
-var person = {
-    firstName: "Lyes",
-    pseudo: "Saviola",
-    sport: "footBall"
+function orderNumber(orderNumber){
+    console.log("Customer order",orderNumber);
+    /**
+     * @name prepareCommand
+     * @description a callback method
+     */
+    prepareCommand(function(){
+        console.log("Delivered command order ", orderNumber);
+    });
 }
-//Print object to console
-console.log(person);
 
 /**
- * @name addNumber
- * @param a
- * @param b
- * @returns {*}
+ * @name prepareCommand
+ * @description simulation service treatment
+ * @param callback
  */
-function addNumber(a, b){
-    return a + b;
+function prepareCommand(callback){
+    setTimeout(callback, 3000);
 }
-//Print result to console
-console.log(addNumber(6, 12));
 
 /**
- * @name withoutReturn
+ * @description simulation customer request
  */
-function withoutReturn(){
-}
-//Print to console : undefined
-console.log(withoutReturn());
-
-/**
- * @name printValue
- * @description anonymous function, you can use this function as attribute on another functions
- */
-var printValue = function(){
-    console.log("Training nodeJs project");
-}
-//this will print to console : "Training nodeJs project"
-printValue();
-//call function in 6 seconds
-setTimeout(printValue, 6000);
+orderNumber(1);
+orderNumber(2);
+orderNumber(3);
+orderNumber(4);
