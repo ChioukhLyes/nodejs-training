@@ -82,7 +82,7 @@ console.log(object.att1);
 
 
 console.log(19 == "19"); // == compare the values - true
-console.log(19 === "19");// === compare values and types - false
+console.log(19 === "19");// === compare values and types - false (integer, string)
 
 
 
@@ -105,7 +105,51 @@ var object = {
 object.printValue();
 
 //default calling context is global
-function doSomethingWrong(){
+function doSomething(){
     console.log(this === global);
 }
-doSomethingWrong();
+doSomething();
+
+
+
+//Prototype
+
+
+/**
+ * @name user
+ * @constructor
+ */
+function User(){
+    this.name = "";
+    this.credit = 25;
+    this.giveCredit = function giveCredit(player){
+        player.credit += 1;
+        console.log(this.name + " give credit to " + player.name);
+    }
+}
+
+var lyes = new User();
+var hichem = new User();
+
+lyes.name = "Lyes";
+hichem.name = "Hichem";
+
+lyes.giveCredit(hichem);
+
+console.log("Lyes " + lyes.credit);
+console.log("hichem " + hichem.credit);
+
+//adding code to user object using prototype
+//this function can be accessed by lyes and hichem objetcs
+User.prototype.transfert = function transfert(player){
+    player.credit += 100;
+}
+
+lyes.transfert(hichem);
+
+console.log("Lyes " + lyes.credit);
+console.log("hichem " + hichem.credit);
+
+//same for attribute
+User.prototype.rib = "895-95-64";
+console.log("Lyes rib " + lyes.rib);
