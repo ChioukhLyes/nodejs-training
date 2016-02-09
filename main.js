@@ -10,6 +10,6 @@ var actors = require('./actors');
 
 //show console.log message
 actors.printActor();
-
-//we get an error here
 actors.printFilm();
+
+console.log(actors.faveActor);

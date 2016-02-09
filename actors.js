@@ -2,21 +2,22 @@
  * Created by Lyes CHIOUKH on 09/02/2016.
  */
 
-/**
- * @name printActor
- */
-function printActor(){
+//to export all objects
+module.exports = {
+
+    /**
+     * @name printActor
+     */
+    printActor: function(){
     console.log(" Actor 1");
-}
+    },
 
-/**
- * @name printFilm
- */
-function printFilm(){
-    console.log(" Film 1");
-}
+    /**
+     * @name printFilm
+     */
+    printFilm: function() {
+        console.log(" Film 1");
+    },
 
-/**
- * way to export module function/attribute
- */
-module.exports.printActor = printActor;
+    faveActor: "Denzel"
+};
