@@ -3,4 +3,6 @@
  */
 
 var films = require('./films');
-console.log(films.bestMovies);
+var filmsBest = films();
+filmsBest.bestMovies = "Dexter";
+console.log(filmsBest.bestMovies);

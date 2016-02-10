@@ -3,6 +3,6 @@
  */
 
 var films = require('./films');
-films.bestMovies = "Titanic";
-
-console.log(films.bestMovies);
+var filmsBest  = films();
+filmsBest.bestMovies = 'titanic';
+console.log(filmsBest.bestMovies);
