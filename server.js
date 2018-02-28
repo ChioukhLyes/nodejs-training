@@ -1,13 +1,25 @@
-const http = require("http");
-const fs = require('fs');
-const url = require('url');
+let _ = require("lodash");
 
-let server = http.createServer();
-
-let file = 
+//or using just map
+let map = require("lodash/map");
 
 
-server.on('request', (request, response) => {
+let app = require('./app').start(8080);
+
+console.log(_.map([1 , 2, 3], function (n) {
+    return n*3;    
+}));
+
+//Second solution
+console.log(map([1 , 2, 3], function (n) {
+    return n+3;    
+}));
+
+app.on('root', function (response) {
+    response.write('Im on root');
+})
+
+//server.on('request', (request, response) => {
 
     /* 
     //Get query parameters
@@ -56,13 +68,7 @@ server.on('request', (request, response) => {
             response.end(data);
         }       
       }); */
-
-
-
-});
-
-
-server.listen(8080);
+//});
 
 
 
